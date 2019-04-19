@@ -29,7 +29,11 @@ public class HAExampleServlet  extends GenericServlet {
             Integer count = incrementCount( session );
             message = "From session " + session.getId() + ", for the " + count + " time on pod " + message;
         }
+        res.getWriter().println("<html>");
+        res.getWriter().println("<h4>");
         res.getWriter().println(message);
+        res.getWriter().println("</h4>");
+        res.getWriter().println("</html>");
     }
 
     private Integer incrementCount(HttpSession session)
